@@ -1,0 +1,40 @@
+{
+  "policy": {
+    "name": "Example Security Policy",
+    "version": "1.0",
+    "description": "Defines access control and security requirements.",
+    "status": "active",
+    "effectiveDate": "2026-06-29",
+    "rules": [
+      {
+        "id": "RULE-001",
+        "name": "Authentication Required",
+        "effect": "allow",
+        "condition": {
+          "authenticated": true
+        }
+      },
+      {
+        "id": "RULE-002",
+        "name": "Admin Access",
+        "effect": "allow",
+        "condition": {
+          "role": "admin"
+        }
+      },
+      {
+        "id": "RULE-003",
+        "name": "Deny Unknown Users",
+        "effect": "deny",
+        "condition": {
+          "authenticated": false
+        }
+      }
+    ],
+    "audit": {
+      "enabled": true,
+      "logLevel": "info",
+      "retentionDays": 90
+    }
+  }
+}
